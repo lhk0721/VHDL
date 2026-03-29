@@ -11,7 +11,12 @@ architecture tb of half_adder_simple_tb is
 
 begin
     -- connecting testbench signals with half_adder.vhd
-    UUT : entity work.half_adder port map (a => a, b => b, sum => sum, carry => carry);
+    UUT : entity work.half_adder port map (
+        a => a, 
+        b => b, 
+        sum => sum, 
+        carry => carry
+    );
     -- half_adder and the TB must be in the same directory
 
     STIM: process -- unsynthetizeable part

@@ -17,7 +17,7 @@ architecture tb of two_phase_handshake_transmitter_tb is
     -- virtual input
     signal prev_req : std_logic;
 begin
-    UUT: entity work.transmitter port map(
+    UUT: entity work.two_phase_handshake_transmitter port map(
         load => load,
         clk => clk,
         reset_n => reset_n,

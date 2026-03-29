@@ -13,13 +13,14 @@
 
 1. `half_adder.vhdl`
 2. `half_adder_simple_tb.vhdl`
-3. `DFF.vhdl`
-4. `modulo_m_counter.vhdl`
-5. `modulo_m_counter_tb.vhdl`
-6. `simple_01_moore.vhdl`
-7. `simple_02_mealy.vhdl`
+3. `D_latch.vhdl`
+4. `DFF.vhdl`
+5. `modulo_m_counter.vhdl`
+6. `modulo_m_counter_tb.vhdl`
+7. `simple_01_moore.vhdl`
+8. `simple_02_mealy.vhdl`
 
-가장 짧은 조합 회로부터 보고, 그다음 테스트 코드, 순차 회로의 기본인 D 플립플롭, 카운터, 상태기계 순서로 읽으면 부담이 적습니다.
+가장 짧은 조합 회로부터 보고, 그다음 테스트 코드, 래치와 플립플롭 같은 기본 저장 소자, 카운터, 상태기계 순서로 읽으면 부담이 적습니다.
 
 ## VHDL 파일의 기본 구조
 
@@ -150,6 +151,7 @@ end case;
 
 - [half_adder.md](/Users/neighbor/Documents/Code/Github/vhdl/docs/half_adder.md)
 - [half_adder_simple_tb.md](/Users/neighbor/Documents/Code/Github/vhdl/docs/half_adder_simple_tb.md)
+- [D_latch.md](/Users/neighbor/Documents/Code/Github/vhdl/docs/D_latch.md)
 - [DFF.md](/Users/neighbor/Documents/Code/Github/vhdl/docs/DFF.md)
 - [modulo_m_counter.md](/Users/neighbor/Documents/Code/Github/vhdl/docs/modulo_m_counter.md)
 - [modulo_m_counter_tb.md](/Users/neighbor/Documents/Code/Github/vhdl/docs/modulo_m_counter_tb.md)

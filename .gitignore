@@ -1,0 +1,19 @@
+# IDE / project metadata
+*.ipinfo
+
+# GHDL / VHDL build artifacts
+work-obj*.cf
+*.cf
+
+# Common simulator outputs
+transcript
+vsim.wlf
+*.wlf
+*.vcd
+*.ghw
+*.fst
+
+# Temporary / backup files
+*.log
+*.tmp
+*~

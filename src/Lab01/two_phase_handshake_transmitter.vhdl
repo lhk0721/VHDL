@@ -13,6 +13,7 @@ entity control_unit is
     );
 end control_unit;
 
+library ieee;
 use ieee.std_logic_1164.all;
 entity data_reg is
     port (
@@ -24,8 +25,9 @@ entity data_reg is
     );
 end data_reg;
 
+library ieee;
 use ieee.std_logic_1164.all;
-entity transmitter is
+entity two_phase_handshake_transmitter is
     port (
         clk           : in  std_logic;
         reset_n       : in  std_logic;
@@ -36,9 +38,10 @@ entity transmitter is
         load          : out std_logic; -- for verification purpose
         req           : out std_logic
     );
-end transmitter;
+end two_phase_handshake_transmitter;
 
 -- ===== architecture =====
+library ieee;
 use ieee.std_logic_1164.all;
 architecture behavioral of control_unit is
 
@@ -92,6 +95,7 @@ begin
     end process;
 end behavioral;
 
+library ieee;
 use ieee.std_logic_1164.all;
 architecture behavioral of data_reg is
 
@@ -110,8 +114,9 @@ begin
 
 end behavioral;
 
+library ieee;
 use ieee.std_logic_1164.all;
-architecture structural of transmitter is
+architecture structural of two_phase_handshake_transmitter is
 
     signal load_sig : std_logic;
     signal data_sig : std_logic_vector(7 downto 0);
