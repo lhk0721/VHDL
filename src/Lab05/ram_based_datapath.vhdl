@@ -24,18 +24,6 @@ end AC;
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
-USE ieee.numeric_std.all;
-ENTITY ALU is
-    port(
-        op1 : IN STD_LOGIC_VECTOR(3 downto 0);
-        op2 : IN STD_LOGIC_VECTOR(3 downto 0);
-        sel : IN STD_LOGIC_VECTOR(2 downto 0);
-        output : OUT STD_LOGIC_VECTOR(3 downto 0)
-    );
-end ALU;
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
 ENTITY MAR is
     port(
         clock : IN STD_LOGIC;
@@ -45,6 +33,18 @@ ENTITY MAR is
         output : OUT STD_LOGIC_VECTOR(2 downto 0)
     );
 end MAR;
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+ENTITY ALU is
+    port(
+        op1 : IN STD_LOGIC_VECTOR(3 downto 0);
+        op2 : IN STD_LOGIC_VECTOR(3 downto 0);
+        sel : IN STD_LOGIC_VECTOR(2 downto 0);
+        output : OUT STD_LOGIC_VECTOR(3 downto 0)
+    );
+end ALU;
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
@@ -118,6 +118,22 @@ END behavioral;
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+architecture behavioral of MAR is 
+begin
+    process(clock, reset_n)
+    begin
+        if (reset_n = '0') then
+            output <= "000";
+        elsif rising_edge(clock) then 
+            if(load = '1') then
+                output <= input;
+            end if;
+        end if;
+    end process;
+end behavioral;
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 architecture behavioral of ALU is 
 begin
@@ -141,22 +157,6 @@ begin
             when others =>
                 output <= not op1;
         end case;
-    end process;
-end behavioral;
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-architecture behavioral of MAR is 
-begin
-    process(clock, reset_n)
-    begin
-        if (reset_n = '0') then
-            output <= "000";
-        elsif rising_edge(clock) then 
-            if(load = '1') then
-                output <= input;
-            end if;
-        end if;
     end process;
 end behavioral;
 
